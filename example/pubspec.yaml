@@ -32,7 +32,9 @@ dependencies:
     sdk: flutter
 
   custom_design_system:
-    path: ../
+    git:
+      url: https://github.com/casa98/custom_design_system.git
+      ref: main
 
 
   # The following adds the Cupertino Icons font to your application.

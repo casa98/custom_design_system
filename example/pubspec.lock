@@ -52,9 +52,11 @@ packages:
   custom_design_system:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: "2cbe407e76a372f1b077b36952201f5bdbbb4391"
+      url: "https://github.com/casa98/custom_design_system.git"
+    source: git
     version: "0.2.0"
   fake_async:
     dependency: transitive
