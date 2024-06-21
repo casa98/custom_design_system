@@ -1,39 +1,57 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Paquete Custom Design System
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+Este paquete proporciona un sistema de diseño para aplicaciones Flutter, estructurado utilizando principios de diseño atómico. Consiste en átomos, moléculas, organismos, plantillas y páginas, garantizando la reutilización y la consistencia en toda la aplicación.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Instalación
+Agrega `custom_design_system` a tu `pubspec.yaml`:
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  custom_design_system:
+    git:
+      url: https://github.com/casa98/custom_design_system.git
+      ref: main
 ```
 
-## Additional information
+## Componentes
+Este paquete cuenta con distintos componentes de UI para ser reutilizados, se detallan a continuación:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### Átomos:
+- `PrimaryButton`: Botón personalizado con la forma de un `ElevatedButton`.
+- `SecondaryButton`: Botón personalizado con la forma de un `TextButton`.
+- `BodyText`: Texto personalizado siguiendo las propiedades de `Theme.of(context).textTheme.bodyMedium`.
+- `CaptionText`: Texto personalizado siguiendo las propiedades de `Theme.of(context).textTheme.bodySmall`.
+- `CustomText`: Texto personalizado que recibe un `TextTheme` como parámetro para su mayor personalización, además de las propiedades `maxLines` y `overflow`.
+- `HeaderText`: Texto personalizado siguiendo las propiedades de `Theme.of(context).textTheme.headlineMedium`.
+
+### Moléculas:
+- `BasicCard`: Tarjeta personalizada que recibe las propiedades `title` y `content`.
+- `GenericCard`: Tarjeta personalizada más compleja que recibe también `leading` y `trailing` widgets, además de funciones `onPressed` y `onTrailingPressed`.
+- `FormTextField`: TextField personalizado que recibe `controller`, `labelText` y `obscureText`.
+- `ListItem`: Ítem de lista sencillo que recibe `title` y `subtitle`.
+
+### Organismos
+- `CustomNavigationBar`: Componente que permite una rápida implementación personalizada de un `BottomNavigationBar`.
+- `Header`: Implementación personalizada de un `AppBar`.
+- `LoginForm`: Implementación personalizada de un formulario de inicio de sesión.
+- `SettingsOptions`: Lista de elementos personalizados generalmente usados en una pantalla de *Ajustes*.
+
+### Plantillas
+- `MainTemplate`: Esta plantilla contiene varios organismos como lo son `Header` y `CustomNavigationBar`.
+- `SecondaryTemplate`: Esta plantilla es más sencilla y solo incluye el organismo `Header`.
+
+### Páginas
+- `HomePage`: Esta página contiene la plantilla `MainTemplate` que a su vez contiene algunos *Organismos*, y estos organismos contienen moléculas y átomos.
+
+## Uso
+Asegúrate de importar el paquete `custom_design_system` donde deseas utilizar alguno de los componentes mencionados en la sección anterior, y ya tendrás disponible la lista de componentes pertenecientes al paquete.
+
+## Ejemplo
+Un ejemplo de una aplicación Flutter que demuestra cómo usar este paquete se puede encontrar en el directorio `example`. Para ejecutar la aplicación de ejemplo siga estos pasos:
+
+1. `cd example`
+2. `flutter run`
+
+## Información adicional
+- Flutter 3.19.6 (Canal estable)
+- Dart 3.3.4 (estable)

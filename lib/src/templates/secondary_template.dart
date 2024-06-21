@@ -11,7 +11,6 @@ class SecondaryTemplate extends StatelessWidget {
       body: const Center(
         child: Text('Body'),
       ),
-      bottomNavigationBar: CustomNavigationBar(onTap: (p0) {}),
     );
   }
 }

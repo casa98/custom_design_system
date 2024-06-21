@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MainTemplate(
       bodyTab1: LoginForm(),
-      bodyTab2: const SettingsOptions(),
+      bodyTab2: const SettingsOptions(length: 5,),
     );
   }
 }

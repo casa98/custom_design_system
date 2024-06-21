@@ -9,6 +9,8 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(title),
+      elevation: 0.0,
+      centerTitle: true,
     );
   }
 
